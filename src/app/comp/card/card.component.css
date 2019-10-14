@@ -1,0 +1,10 @@
+.zero {
+  box-shadow: 1px 1px 15px 0px rgba(0,0,0,0.2);
+}
+
+:host {
+  height: 100%;
+}
+/*
+https://codepen.io/Varin/pen/JXePXw
+*/

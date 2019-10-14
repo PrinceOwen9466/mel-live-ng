@@ -1,0 +1,16 @@
+<div class="zero" [ngStyle]="{'background': props.background}">
+  <div class="float menu" (click)="menuToggled.emit()"
+       [ngStyle]="{'color': props.fill}"
+  >
+    <i class="zwicon-hamburger-menu"></i>
+  </div>
+
+  <div fxLayout="column" fxLayoutAlign="center center" style="color: #fff" [ngStyle]="{'height': props.height}">
+    <i class="icon" [ngClass]="props.icon" *ngIf="props.icon && !props.nativeIcon"></i>
+    <i class="icon" nz-icon [nzType]="props.icon" nzTheme="outline" *ngIf="props.icon && props.nativeIcon"></i>
+    <img alt="Icon" [src]="props.iconPath" *ngIf="props.iconPath && !props.icon"
+         [ngStyle]="{'margin': '20px', width: props.iconWidth, height: props.iconHeight}"
+    >
+      <p *ngIf="props.label">{{props.label}}</p>
+  </div>
+</div>

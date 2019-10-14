@@ -1,0 +1,11 @@
+<ng-container>
+  <div class="card-zero" [ngStyle]="{'background-image': 'url(' + product.displayPicture?.url + ')'}"
+       (mouseenter)="mouseOver = true" (mouseleave)="mouseOver = false"
+  >
+    <i nz-icon nzType="heart" nzTheme="twotone" class="heart" [ngClass]="{active: mouseOver}" nzTwotoneColor="#FAAD14"></i>
+    <div class="info" fxFlex fxLayout="column" [ngClass]="{active: mouseOver}" >
+      <h4>{{product.name}}</h4>
+      <h3>N5,000</h3>
+    </div>
+  </div>
+</ng-container>

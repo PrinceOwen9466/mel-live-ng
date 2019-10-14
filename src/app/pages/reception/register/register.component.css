@@ -1,0 +1,56 @@
+:host {
+  display: flex;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.zero {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  background: #F4F4F4;
+}
+
+.box {
+  margin: auto;
+  width: 700px;
+}
+
+.title h1 {
+  color: #93C62F;
+  text-align: center;
+  font-size: 48px;
+}
+
+.col-offset-4 {
+  margin-left: 16.66666667%;
+}
+
+.col-offset-2 {
+  margin-left: 8.333333%;
+}
+
+.number-label {
+  background: #93C62F;
+  color: #fff;
+  width: 48px;
+  height: 32px;
+  text-align: center;
+  padding-top: 4px;
+}
+
+.login-box {
+  border: solid 1px #93C62F;
+  border-radius: 4px;
+  background: #d9d9d9;
+  height: 48px;
+  display: flex;
+  width: 100%;
+  padding: 4px;
+}
+
+.register-form-button {
+  width: 100%;
+}

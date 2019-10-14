@@ -1,0 +1,56 @@
+.profile {
+  position: fixed;
+  width: 100%;
+  height: 190px;
+  padding: 20px 30px;
+  box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.3);
+  background: #fff;
+  color: #93C62F;
+  z-index: 1;
+}
+
+.dashboard {
+  margin-top: 190px;
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+  padding: 30px 60px 20px 30px;
+}
+
+.mb.dashboard {
+  margin-top: 235px;
+  padding: 20px 30px 20px 10px;
+}
+
+.profile h3, h4, p {
+  margin: 0px;
+}
+
+.mb.profile {
+  background: #93C62F;
+  height: 130px;
+  color: #fff;
+  padding: 10px 10px 10px 20px;
+  margin-top: 115px;
+}
+
+.mb-bg { background: #93C62F; }
+.mb-fg { color: #fff; }
+
+.linkBox {
+  background: #fff;
+  color: #93C62F;
+  border-color: #93C62F;
+}
+
+.mb.linkBox {
+  background: #93C62F;
+  color: #fff;
+  border-color: #fff;
+}
+
+.col-z {
+  box-shadow: 1px 1px 15px 0px rgba(0,0,0,0.2);
+}
+
+

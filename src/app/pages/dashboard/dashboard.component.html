@@ -1,0 +1,97 @@
+<div style="width: 100%; height: 100%" fxLayout="column" fxLayoutAlign="start" class="zero">
+<!--  <div fxLayout="column" fxLayoutAlign="center">-->
+<!--    <img width="100%" height="auto" style="max-width: 700px"-->
+<!--         src="/assets/illustrations/fogg/fogg-come-back-later-3.png"/>-->
+<!--    <div style="margin-left: auto; margin-right: auto">-->
+<!--      <h1 style="text-align: center">Grab a cookie!</h1>-->
+<!--      <p style="text-align: center">Construction is ongoing, updates will be shipping soon.</p>-->
+<!--    </div>-->
+<!--  </div>-->
+
+  <div class="profile" [ngClass]="{mb: device.mobile}" fxLayout="row">
+    <div fxLayout="column" style="min-width: 100px">
+      <nz-avatar
+        [ngStyle]="{ 'cursor': 'pointer', 'min-width': device.mobile ? '50px' : '100px' }"
+        [nzSize]="device.mobile ? 50 : 100"
+        nzSrc="/assets/images/astronaut.png"
+        style="vertical-align: middle;"
+      ></nz-avatar>
+
+      <h3 nz-title style="font-weight: 200" [ngClass]="{'mb-fg': device.mobile}">John Doe</h3>
+
+      <div fxLayout="row">
+        <svg-icon src="/assets/images/police-badge.svg" stretch="true"
+          [svgStyle]="{'fill': device.mobile ? '#fff' : '#93C62F', 'width': '16px'}"
+        >
+        </svg-icon>
+        <h4 [ngClass]="{'mb-fg': device.mobile}" style="margin-left: 4px">Aspirant</h4>
+      </div>
+    </div>
+
+    <div style="height: 100%;" fxLayout="row" fxLayoutAlign="end"
+      [fxLayoutGap]="device.mobile ? '4px' : '10px'" [ngStyle]="{'margin-top': device.mobile ? '80px' : '118px',
+      'min-width': device.mobile ? 'initial': '350px'}"
+    >
+      <nz-input-group nzSearch [nzAddOnAfter]="copyTemplate"
+                      [nzSize]="device.mobile ? 'small' : 'default'"
+                      [ngStyle]="{'margin-left': device.mobile ? 'auto' : '5px'}"
+      >
+        <input nz-input placeholder="Referral Link"
+               [(ngModel)]="link" class="linkBox"
+               [ngClass]="{mb: device.mobile}"
+               [nzSize]="device.mobile ? 'small' : 'default'"
+               readonly
+        />
+      </nz-input-group>
+
+      <ng-template #copyTemplate>
+        <button nz-button nzType="primary" nzSearch [nzSize]="device.mobile ? 'small' : 'default'">
+          <i class="zwicon-copy"></i>
+        </button>
+      </ng-template>
+
+      <button nz-button [nzSize]="device.mobile ? 'small' : 'default'">
+        <i class="zwicon-share"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="dashboard" [ngClass]="{mb: device.mobile}">
+    <div nz-row [ngStyle]="{height: device.mobile ? '200px' : '400px'}">
+      <div nz-col nzSpan="6" fxLayout="column"
+           fxFlexAlign="center" fxLayoutGap="16px"
+           style="height: 100%"
+      >
+        <app-card background="#fff"></app-card>
+        <app-card background="#93C62F"></app-card>
+      </div>
+
+
+      <div nz-col nzOffset="1" nzSpan="17" fxLayout="column" style="height: 100%">
+        <h3 nz-title style="font-weight: 200" [ngClass]="{mb: device.mobile}">Notifications</h3>
+        <app-card background="#fff"></app-card>
+      </div>
+    </div>
+
+    <div nz-row [ngStyle]="{height: device.mobile ? '200px' : '400px', 'margin-top': '32px'}">
+      <div nz-col nzSpan="17" fxLayout="column" style="height: 100%">
+        <h3 nz-title style="font-weight: 200" [ngClass]="{mb: device.mobile}">Top users this week</h3>
+        <app-card background="#fff"></app-card>
+      </div>
+
+      <div nz-col nzOffset="1" nzSpan="6" fxLayout="column"
+           fxFlexAlign="center"
+           [ngStyle]="{height: device.mobile ? '92px' : '192px'}"
+      >
+        <app-card background="#93C62F"></app-card>
+      </div>
+    </div>
+
+    <!--
+    <div nz-row style="height: 240px;margin-top: 30px">
+      <app-card nz-col nzSpan="14" background="#93C62F"></app-card>
+      <app-card nz-col nzOffset="2" nzSpan="8" background="#93C62F"></app-card>
+    </div>
+    -->
+  </div>
+</div>

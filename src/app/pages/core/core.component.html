@@ -1,0 +1,67 @@
+<nz-layout class="app-layout">
+  <nz-sider class="menu-sidebar"
+            nzCollapsible
+            nzWidth="256px"
+            nzBreakpoint="md"
+            [(nzCollapsed)]="isCollapsed"
+            *ngIf="!device.mobile"
+  >
+    <app-menu [isCollapsed]="isCollapsed"></app-menu>
+  </nz-sider>
+
+  <nz-drawer
+    [nzClosable]="false"
+    [nzVisible]="menuDrawerActive"
+    [nzPlacement]="'left'"
+    *ngIf="device.mobile"
+    (nzOnClose)="menuDrawerActive = false"
+    style="background: #93C62F"
+    [nzBodyStyle]="{'background': '#93C62F', 'padding': 0, 'height': '100%'}"
+    nzWidth="200px"
+  >
+    <nz-sider class="menu-sidebar">
+      <app-menu></app-menu>
+    </nz-sider>
+  </nz-drawer>
+
+
+
+  <nz-layout>
+    <nz-header *ngIf="false">
+      <div class="app-header" fxLayout="row" fxLayoutAlign="space-between center" style="padding: 0 20px">
+        <h4 nz-title style="margin: 0">{{compass.context.name | titlecase}}</h4>
+        <div>
+          <nz-avatar
+            nz-dropdown nzTrigger="click" [nzDropdownMenu]="menu1" nzPlacement="bottomLeft"
+            [ngStyle]="{ 'cursor': 'pointer' }"
+            nzSrc="/assets/images/astronaut.png"
+            nzSize="large"
+            style="vertical-align: middle;"
+          ></nz-avatar>
+
+          <nz-dropdown-menu #menu1="nzDropdownMenu">
+            <ul nz-menu>
+              <li nz-menu-item [routerLink]="'/account'">Account Settings</li>
+              <li nz-menu-item>Log Out</li>
+            </ul>
+          </nz-dropdown-menu>
+
+        </div>
+      </div>
+    </nz-header>
+
+    <app-crown *ngIf="device.mobile"
+               (menuToggled)="menuDrawerActive = !menuDrawerActive"
+               [props]="compass.context.crown"
+    >
+
+    </app-crown>
+
+
+    <nz-content>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+  </nz-layout>
+</nz-layout>

@@ -1,0 +1,21 @@
+<div class="zero">
+  <div class="header" [ngClass]="{sm: dv.context.size == 1}">
+    <div routerLink="#" class="logo-container" [ngClass]="{sm: dv.context.size == 1}">
+      <img src="assets/images/logo.png">
+    </div>
+
+    <div class="links" fxLayout="row" fxLayoutGap="20px">
+      <a routerLink="login">Login</a>
+      <a routerLink="register">Register</a>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="overlay" [ngClass]="{md: dv.context.size == 2, sm: dv.context.size == 1}" [ngStyle]="{background: 'url(assets/images/patience.jpg)'}">
+      <div class="overlay-text" [ngClass]="{md: dv.context.size == 2, sm: dv.context.size == 1}">
+        <h2>RELAX, WE'RE WORKING.</h2>
+        <p [ngClass]="{sm: dv.context.size == 1}">Our team is working hard to provide you the best experience on your website.</p>
+      </div>
+    </div>
+  </div>
+</div>

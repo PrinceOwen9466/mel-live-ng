@@ -1,0 +1,129 @@
+<div class="zero">
+  <div class="box">
+    <div class="title">
+      <h1>REGISTER</h1>
+    </div>
+
+    <form nz-form [formGroup]="form" nzLayout="horizontal">
+      <div nz-row>
+        <nz-form-item nz-col nzSpan="11">
+          <nz-form-label nzFor="firstName">First Name</nz-form-label>
+          <nz-form-control>
+            <nz-input-group>
+              <input type="text" nz-input id="firstName" formControlName="firstName" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item nz-col class="col-offset-2" nzOffset="2" nzSpan="11">
+          <nz-form-label nzFor="lastName">Last Name</nz-form-label>
+          <nz-form-control>
+            <nz-input-group>
+              <input type="text" nz-input id="lastName" formControlName="lastName"/>
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+
+      <div nz-row>
+        <nz-form-item>
+          <nz-form-label nzFor="Email">Email</nz-form-label>
+          <nz-form-control>
+            <nz-input-group>
+              <input type="email" nz-input id="email" formControlName="email"/>
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+
+      <div nz-row>
+        <nz-form-item nz-col nzSpan="11">
+          <nz-form-label nzFor="username">Username</nz-form-label>
+          <nz-form-control>
+            <nz-input-group>
+              <input type="text" nz-input id="username" formControlName="username"/>
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item nz-col class="col-offset-2" nzOffset="2" nzSpan="11">
+          <nz-form-label nzFor="dateOfBirth">Date Of Birth</nz-form-label>
+          <nz-form-control>
+            <nz-input-group>
+              <nz-date-picker id="dateOfBirth" formControlName="dateOfBirth"></nz-date-picker>
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+
+      <div nz-row>
+        <nz-form-item nz-col nzSpan="11">
+          <nz-form-label nzFor="phoneNumber">Phone Number</nz-form-label>
+          <nz-form-control>
+            <nz-input-group nzCompact>
+              <div class="number-label"><p>+234</p></div>
+              <input type="text" nz-input id="phoneNumber" formControlName="phoneNumber" style="width: calc(100% - 48px)"/>
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item nz-col class="col-offset-2" nzOffset="2" nzSpan="11">
+          <nz-form-label nzFor="gender">Gender</nz-form-label>
+          <nz-form-control>
+            <nz-input-group>
+              <nz-select formControlName="gender" id="gender">
+                <nz-option nzLabel="Male" nzValue="Male"></nz-option>
+                <nz-option nzLabel="Female" nzValue="Female"></nz-option>
+              </nz-select>
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+
+      <div nz-row>
+        <nz-form-label nzFor="state">State Of Origin</nz-form-label>
+        <nz-select formControlName="state" id="state">
+          <nz-option *ngFor="let state of states" [nzLabel]="state.name" [nzValue]="state.name"></nz-option>
+        </nz-select>
+      </div>
+
+      <div nz-row>
+        <nz-form-item nz-col nzSpan="11">
+          <nz-form-label nzFor="password">Password</nz-form-label>
+          <nz-input-group [nzSuffix]="suffixTemplate">
+            <input [type]="passwordVisible ? 'text' : 'password'"
+                   nz-input placeholder="Enter your password"
+                   id="password" formControlName="password"
+            />
+          </nz-input-group>
+
+          <ng-template #suffixTemplate>
+            <i nz-icon [nzType]="passwordVisible ? 'eye-invisible' : 'eye'"
+               (click)="passwordVisible = !passwordVisible"></i>
+          </ng-template>
+        </nz-form-item>
+
+        <nz-form-item nz-col class="col-offset-2" nzOffset="2" nzSpan="11">
+          <nz-form-label nzFor="checkPassword">Password</nz-form-label>
+          <nz-input-group [nzSuffix]="suffixTemplate">
+            <input [type]="checkPasswordVisible ? 'text' : 'password'"
+                   nz-input placeholder="Enter your password"
+                   id="checkPassword" formControlName="checkPassword"
+            />
+          </nz-input-group>
+
+          <ng-template #suffixTemplate>
+            <i nz-icon [nzType]="checkPasswordVisible ? 'eye-invisible' : 'eye'"
+               (click)="checkPasswordVisible = !checkPasswordVisible"></i>
+          </ng-template>
+        </nz-form-item>
+      </div>
+
+      <nz-form-item nz-row>
+        <nz-form-control nzSpan="24">
+          <button nz-button nzType="primary" style="width: 100%">Register</button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<div>
+  <div class="sidebar-logo" style="padding-left: 12px !important;background: #ffffff;color:#93C62F">
+    <a href="#">
+      <img src="/assets/images/logo.png" alt="logo" style="width: 55px !important; height: auto !important">
+      <h1 style="color: #000000">Mel Endless</h1>
+    </a>
+  </div>
+  <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+    <li nz-menu-item nzSelected style="margin-top: 0"
+        [routerLink]="'/dashboard'"
+        [nzSelected]="cc.name == 'dashboard'"
+    >
+      <i nz-icon nzType="dashboard"></i>
+      <span>dashboard</span>
+    </li>
+    <li nz-menu-item
+        [routerLink]="'/wallet'"
+        [nzSelected]="cc.name == 'wallet'"
+    >
+      <i nz-icon nzType="wallet"></i>
+      <span>wallet</span>
+    </li>
+    <li nz-menu-item
+        [routerLink]="'/referrals'"
+        [nzSelected]="cc.name == 'referrals'"
+    >
+      <i nz-icon nzType="user"></i>
+      <span>referrals</span>
+    </li>
+    <li nz-menu-item
+        [routerLink]="'/store'"
+        [nzSelected]="cc.name == 'store'"
+    >
+      <i nz-icon nzType="shopping"></i>
+      <span>products</span>
+    </li>
+    <li nz-menu-item
+        [routerLink]="'/account'"
+        [nzSelected]="cc.name == 'account'"
+    >
+      <i nzType="setting" nz-icon></i>
+      <span>settings</span>
+    </li>
+    <li nz-menu-item
+        [routerLink]="'/support'"
+        [nzSelected]="cc.name == 'support'"
+    >
+      <i nzType="customer-service" nz-icon></i>
+      <span>customer care</span>
+    </li>
+  </ul>
+</div>
